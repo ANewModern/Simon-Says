@@ -4,7 +4,7 @@ const boxes = document.querySelectorAll(".box"); //array of all the divs with a 
 const start = document.querySelector(".start"); //selecting the start button
 const reset = document.querySelector(".reset"); //selecting the reset button
 
-let gameHistory = [1, 0, 3, 2, 2, 1, 3, 0]; //Fake game
+let gameHistory //initializes game history variable
 let userHistory = [] //User history
 let currentHistory = [] //History for current game
 let currentSteps = 0; //How many buttons have been pressed
@@ -17,15 +17,22 @@ let gameReset = false; //Resets the game
 
 //-------------------------------------------------------------------------------------------------------------------------
 
+function gameCreator(){ //returns an array of 40 random moves
+	return [...new Array(40)].map(() => Math.round(Math.random() * 3));
+}
+
 function resetGame(){ //resets the values of the game
 	totalSteps = 1;
 	currentHistory = [];
 	userHistory = [];
-	playingGame = true;
+	playingGame = false;
+	console.log("Game variables reset");
 }
 
 function gameMove(){ //function that visualizes the moves that the user has to press
-	if(!playingGame){
+	if(!playingGame){ //checks to see if the game has already started or is starting
+		gameHistory = gameCreator(); //creates an array for the game
+		console.log(gameHistory);
 		totalSteps = 1;
 		currentHistory = [];
 		userHistory = [];
@@ -53,17 +60,13 @@ function onClick(){ //function for when the user clicks on one of the colored bu
 					currentHistory = [];
 					gameSteps = false;
 					totalSteps++;
-					gameMove();
+					gameMove(); //adds another move for the user
 			}
 	}}}}
 }
 
 //-------------------------------------------------------------------------------------------------------------------------
 
-reset.addEventListener("click", playingGame => {
-	playingGame = false;
-
-	console.log(playingGame);
-}); //Resets the game
+reset.addEventListener("click", resetGame); //resets the variables for the game
 start.addEventListener("click", gameMove); //sets and event listener to the start button
 boxes.forEach(box => box.addEventListener("click", onClick)); //sets an event listener to the letters
