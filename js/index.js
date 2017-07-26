@@ -9,6 +9,7 @@ let userHistory = [] //User history
 let currentHistory = [] //History for current game
 let currentSteps = 0; //How many buttons have been pressed
 let totalSteps = 1; //How many buttons can be pressed in the current game
+let colors = ["rgba(255, 0, 0, 1)", "rgba(0, 255, 0, 1)", "rgba(0, 0, 255, 1)", "rgba(255, 255, 0, 1)"]; //array of colors to use for when the buttons are pressed or shown
 
 let playingGame = false; //Flag to check if game is running
 let gameSteps = true; //Flag to make sure that colored buttons can only be pressed a # of times
@@ -39,8 +40,11 @@ function gameMove(){ //function that visualizes the moves that the user has to p
 		playingGame = true;
 	}
 	let currentMoves = gameHistory.slice(0, totalSteps);
-	currentSteps = 0;
 	console.log(currentMoves);
+	currentMoves.forEach(step => {
+		document.getElementById("box"+(step+1)).style.backgroundColor = colors[step];
+	});
+	currentSteps = 0;
 	gameSteps = true;
 }
 
