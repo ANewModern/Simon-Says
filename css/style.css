@@ -51,6 +51,10 @@ body, html {
   background: rgba(255, 255, 0, .5);
 }
 
+.spacer {
+  width: 10%;
+}
+
 .button {
   background: white;
   border-radius: 12px;
