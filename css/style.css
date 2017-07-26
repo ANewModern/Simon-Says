@@ -1,0 +1,59 @@
+
+body, html {
+  background: lightgrey;
+}
+
+* {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: center;
+  width: 75vh;
+  height: 20vh;
+}
+
+.button-row {
+  height: 10vh;
+}
+
+.box {
+  border-radius: 20px;
+  height: 90%;
+  width: 40%;
+}
+
+.box1 {
+  background: rgba(255, 0, 0, .5);
+}
+
+.box2 {
+  background: rgba(0, 255, 0, .5);
+}
+
+.box3 {
+  background: rgba(0, 0, 255, .5);
+}
+
+.box4 {
+  background: rgba(255, 255, 0, .5);
+}
+
+.button {
+  background: white;
+  border-radius: 12px;
+  height: 90%;
+  width: 20%;
+}
