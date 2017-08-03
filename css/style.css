@@ -35,20 +35,40 @@ body, html {
   width: 40%;
 }
 
-#box1 {
+#box0 {
   background: rgba(255, 0, 0, .5);
 }
 
-#box2 {
+#box0:active {
+  background: rgba(255, 0, 0, 1);
+}
+
+#box1 {
   background: rgba(0, 255, 0, .5);
 }
 
-#box3 {
+#box1:active {
+  background: rgba(0, 255, 0, 1);
+}
+
+#box2 {
   background: rgba(0, 0, 255, .5);
 }
 
-#box4 {
+#box2:active {
+  background: rgba(0, 0, 255, 1);
+}
+
+#box3 {
   background: rgba(255, 255, 0, .5);
+}
+
+#box3:active {
+  background: rgba(255, 255, 0, 1);
+}
+
+.button:active {
+  background: rgba(0, 0, 0, .5);
 }
 
 .spacer {
